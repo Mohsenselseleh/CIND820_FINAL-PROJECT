@@ -16567,7 +16567,7 @@ Requirement already satisfied: numpy&gt;=1.13.3 in c:\users\mohsen\anaconda3\lib
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[395]:</div>
+<div class="prompt input_prompt">In&nbsp;[428]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install graphviz
@@ -16576,14 +16576,15 @@ Requirement already satisfied: numpy&gt;=1.13.3 in c:\users\mohsen\anaconda3\lib
 <span class="kn">import</span> <span class="nn">pydotplus</span>
 
 <span class="n">dot_data</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">export_graphviz</span><span class="p">(</span><span class="n">clf_tree</span><span class="p">,</span> <span class="n">out_file</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> 
-                     <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Duration in month&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;Credit amount&#39;</span><span class="p">,</span><span class="s1">&#39;Installment rate in percentage of disposable income&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;Present residence since&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;Age in years&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;Number of existing credits at this bank&#39;</span><span class="p">,</span>
-                                    <span class="s1">&#39;Number of people being liable to provide maintenance for&#39;</span><span class="p">,</span>
-                                                                         <span class="c1">#&#39;deadline&#39;</span>
-<span class="c1">#                                     ,&#39;Month&#39;</span>
+                     <span class="n">feature_names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Status of existing checking account&#39;</span><span class="p">,</span><span class="s1">&#39;Duration in month&#39;</span><span class="p">,</span><span class="s1">&#39;Credit history &#39;</span>                
+                                          
+                                    <span class="p">,</span><span class="s1">&#39;Purpose &#39;</span><span class="p">,</span><span class="s1">&#39;Credit amount&#39;</span><span class="p">,</span><span class="s1">&#39;Savings account/bonds &#39;</span><span class="p">,</span><span class="s1">&#39;Present employment since &#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;Installment rate in percentage of disposable income &#39;</span><span class="p">,</span><span class="s1">&#39;Personal status and sex&#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;Other debtors / guarantors&#39;</span><span class="p">,</span><span class="s1">&#39;Present residence since&#39;</span><span class="p">,</span><span class="s1">&#39;Property &#39;</span><span class="p">,</span><span class="s1">&#39;Age in years&#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;Other installment plans&#39;</span><span class="p">,</span><span class="s1">&#39;Housing&#39;</span><span class="p">,</span><span class="s1">&#39;Number of existing credits at this bank&#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;Job&#39;</span><span class="p">,</span><span class="s1">&#39;Number of people being liable to provide maintenance for&#39;</span><span class="p">,</span><span class="s1">&#39;Telephone&#39;</span><span class="p">,</span>
+                                    <span class="s1">&#39;foreign worker&#39;</span>                                       
+                                            
                                    <span class="p">],</span>  
                      <span class="n">class_names</span><span class="o">=</span><span class="s1">&#39;Cost Matrix&#39;</span><span class="p">,</span>  
                      <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  
@@ -16619,43 +16620,172 @@ Requirement already satisfied: pyparsing&gt;=2.0.1 in c:\users\mohsen\anaconda3\
 
 <div class="output_area">
 
-    <div class="prompt"></div>
+    <div class="prompt output_prompt">Out[428]:</div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">---------------------------------------------------------------------------</span>
-<span class="ansi-red-intense-fg ansi-bold">ValueError</span>                                Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">&lt;ipython-input-395-849b8d4724ac&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">      4</span> <span class="ansi-green-intense-fg ansi-bold">import</span> pydotplus
-<span class="ansi-green-fg">      5</span> 
-<span class="ansi-green-intense-fg ansi-bold">----&gt; 6</span><span class="ansi-yellow-intense-fg ansi-bold"> dot_data = tree.export_graphviz(clf_tree, out_file=None, 
-</span><span class="ansi-green-fg">      7</span>                      feature_names=[&#39;Duration in month&#39;,
-<span class="ansi-green-fg">      8</span>                                     <span class="ansi-blue-intense-fg ansi-bold">&#39;Credit amount&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span><span class="ansi-blue-intense-fg ansi-bold">&#39;Installment rate in percentage of disposable income&#39;</span><span class="ansi-yellow-intense-fg ansi-bold">,</span>
 
-<span class="ansi-green-intense-fg ansi-bold">~\anaconda3\lib\site-packages\sklearn\utils\validation.py</span> in <span class="ansi-cyan-fg">inner_f</span><span class="ansi-blue-intense-fg ansi-bold">(*args, **kwargs)</span>
-<span class="ansi-green-fg">     61</span>             extra_args <span class="ansi-yellow-intense-fg ansi-bold">=</span> len<span class="ansi-yellow-intense-fg ansi-bold">(</span>args<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-yellow-intense-fg ansi-bold">-</span> len<span class="ansi-yellow-intense-fg ansi-bold">(</span>all_args<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     62</span>             <span class="ansi-green-intense-fg ansi-bold">if</span> extra_args <span class="ansi-yellow-intense-fg ansi-bold">&lt;=</span> <span class="ansi-cyan-intense-fg ansi-bold">0</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">---&gt; 63</span><span class="ansi-yellow-intense-fg ansi-bold">                 </span><span class="ansi-green-intense-fg ansi-bold">return</span> f<span class="ansi-yellow-intense-fg ansi-bold">(</span><span class="ansi-yellow-intense-fg ansi-bold">*</span>args<span class="ansi-yellow-intense-fg ansi-bold">,</span> <span class="ansi-yellow-intense-fg ansi-bold">**</span>kwargs<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">     64</span> 
-<span class="ansi-green-fg">     65</span>             <span class="ansi-red-intense-fg ansi-bold"># extra_args &gt; 0</span>
+<div class="output_svg output_subarea output_execute_result">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.38.0 (20140413.2041)
+ -->
+<!-- Title: Tree Pages: 1 -->
+<svg width="576pt" height="544pt"
+ viewBox="0.00 0.00 576.00 544.44" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.986301 0.986301) rotate(0) translate(4 548)">
+<title>Tree</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-548 580,-548 580,4 -4,4"/>
+<!-- 0 -->
+<g id="node1" class="node"><title>0</title>
+<path fill="#fefaf7" stroke="black" d="M249.5,-544C249.5,-544 91.5,-544 91.5,-544 85.5,-544 79.5,-538 79.5,-532 79.5,-532 79.5,-473 79.5,-473 79.5,-467 85.5,-461 91.5,-461 91.5,-461 249.5,-461 249.5,-461 255.5,-461 261.5,-467 261.5,-473 261.5,-473 261.5,-532 261.5,-532 261.5,-538 255.5,-544 249.5,-544"/>
+<text text-anchor="start" x="87.5" y="-528.8" font-family="Helvetica,sans-Serif" font-size="14.00">Duration in month ≤ &#45;0.464</text>
+<text text-anchor="start" x="141.5" y="-513.8" font-family="Helvetica,sans-Serif" font-size="14.00">gini = 0.5</text>
+<text text-anchor="start" x="123" y="-498.8" font-family="Helvetica,sans-Serif" font-size="14.00">samples = 100</text>
+<text text-anchor="start" x="122" y="-483.8" font-family="Helvetica,sans-Serif" font-size="14.00">value = [51, 49]</text>
+<text text-anchor="start" x="140.5" y="-468.8" font-family="Helvetica,sans-Serif" font-size="14.00">class = C</text>
+</g>
+<!-- 1 -->
+<g id="node2" class="node"><title>1</title>
+<path fill="#e58139" stroke="black" d="M141,-417.5C141,-417.5 60,-417.5 60,-417.5 54,-417.5 48,-411.5 48,-405.5 48,-405.5 48,-361.5 48,-361.5 48,-355.5 54,-349.5 60,-349.5 60,-349.5 141,-349.5 141,-349.5 147,-349.5 153,-355.5 153,-361.5 153,-361.5 153,-405.5 153,-405.5 153,-411.5 147,-417.5 141,-417.5"/>
+<text text-anchor="start" x="71.5" y="-402.3" font-family="Helvetica,sans-Serif" font-size="14.00">gini = 0.0</text>
+<text text-anchor="start" x="57" y="-387.3" font-family="Helvetica,sans-Serif" font-size="14.00">samples = 49</text>
+<text text-anchor="start" x="56" y="-372.3" font-family="Helvetica,sans-Serif" font-size="14.00">value = [49, 0]</text>
+<text text-anchor="start" x="70.5" y="-357.3" font-family="Helvetica,sans-Serif" font-size="14.00">class = C</text>
+</g>
+<!-- 0&#45;&gt;1 -->
+<g id="edge1" class="edge"><title>0&#45;&gt;1</title>
+<path fill="none" stroke="black" d="M146.214,-460.907C139.546,-449.763 132.304,-437.658 125.592,-426.439"/>
+<polygon fill="black" stroke="black" points="128.481,-424.451 120.343,-417.667 122.474,-428.045 128.481,-424.451"/>
+<text text-anchor="middle" x="114.25" y="-438.213" font-family="Helvetica,sans-Serif" font-size="14.00">True</text>
+</g>
+<!-- 2 -->
+<g id="node3" class="node"><title>2</title>
+<path fill="#41a1e6" stroke="black" d="M300,-425C300,-425 183,-425 183,-425 177,-425 171,-419 171,-413 171,-413 171,-354 171,-354 171,-348 177,-342 183,-342 183,-342 300,-342 300,-342 306,-342 312,-348 312,-354 312,-354 312,-413 312,-413 312,-419 306,-425 300,-425"/>
+<text text-anchor="start" x="179" y="-409.8" font-family="Helvetica,sans-Serif" font-size="14.00">Telephone ≤ &#45;1.711</text>
+<text text-anchor="start" x="204" y="-394.8" font-family="Helvetica,sans-Serif" font-size="14.00">gini = 0.075</text>
+<text text-anchor="start" x="198" y="-379.8" font-family="Helvetica,sans-Serif" font-size="14.00">samples = 51</text>
+<text text-anchor="start" x="197" y="-364.8" font-family="Helvetica,sans-Serif" font-size="14.00">value = [2, 49]</text>
+<text text-anchor="start" x="212.5" y="-349.8" font-family="Helvetica,sans-Serif" font-size="14.00">class = o</text>
+</g>
+<!-- 0&#45;&gt;2 -->
+<g id="edge2" class="edge"><title>0&#45;&gt;2</title>
+<path fill="none" stroke="black" d="M195.133,-460.907C200.475,-452.105 206.18,-442.703 211.697,-433.612"/>
+<polygon fill="black" stroke="black" points="214.715,-435.386 216.91,-425.021 208.73,-431.754 214.715,-435.386"/>
+<text text-anchor="middle" x="222.852" y="-445.604" font-family="Helvetica,sans-Serif" font-size="14.00">False</text>
+</g>
+<!-- 3 -->
+<g id="node4" class="node"><title>3</title>
+<path fill="#ffffff" stroke="black" d="M202,-306C202,-306 87,-306 87,-306 81,-306 75,-300 75,-294 75,-294 75,-235 75,-235 75,-229 81,-223 87,-223 87,-223 202,-223 202,-223 208,-223 214,-229 214,-235 214,-235 214,-294 214,-294 214,-300 208,-306 202,-306"/>
+<text text-anchor="start" x="83" y="-290.8" font-family="Helvetica,sans-Serif" font-size="14.00">Age in years ≤ 0.18</text>
+<text text-anchor="start" x="115.5" y="-275.8" font-family="Helvetica,sans-Serif" font-size="14.00">gini = 0.5</text>
+<text text-anchor="start" x="105" y="-260.8" font-family="Helvetica,sans-Serif" font-size="14.00">samples = 2</text>
+<text text-anchor="start" x="104" y="-245.8" font-family="Helvetica,sans-Serif" font-size="14.00">value = [1, 1]</text>
+<text text-anchor="start" x="114.5" y="-230.8" font-family="Helvetica,sans-Serif" font-size="14.00">class = C</text>
+</g>
+<!-- 2&#45;&gt;3 -->
+<g id="edge3" class="edge"><title>2&#45;&gt;3</title>
+<path fill="none" stroke="black" d="M207.846,-341.907C200.323,-332.832 192.271,-323.121 184.518,-313.769"/>
+<polygon fill="black" stroke="black" points="187.171,-311.485 178.094,-306.021 181.782,-315.953 187.171,-311.485"/>
+</g>
+<!-- 6 -->
+<g id="node7" class="node"><title>6</title>
+<path fill="#3d9fe6" stroke="black" d="M432.5,-306C432.5,-306 244.5,-306 244.5,-306 238.5,-306 232.5,-300 232.5,-294 232.5,-294 232.5,-235 232.5,-235 232.5,-229 238.5,-223 244.5,-223 244.5,-223 432.5,-223 432.5,-223 438.5,-223 444.5,-229 444.5,-235 444.5,-235 444.5,-294 444.5,-294 444.5,-300 438.5,-306 432.5,-306"/>
+<text text-anchor="start" x="240.5" y="-290.8" font-family="Helvetica,sans-Serif" font-size="14.00">Other installment plans ≤ 1.694</text>
+<text text-anchor="start" x="305" y="-275.8" font-family="Helvetica,sans-Serif" font-size="14.00">gini = 0.04</text>
+<text text-anchor="start" x="295" y="-260.8" font-family="Helvetica,sans-Serif" font-size="14.00">samples = 49</text>
+<text text-anchor="start" x="294" y="-245.8" font-family="Helvetica,sans-Serif" font-size="14.00">value = [1, 48]</text>
+<text text-anchor="start" x="309.5" y="-230.8" font-family="Helvetica,sans-Serif" font-size="14.00">class = o</text>
+</g>
+<!-- 2&#45;&gt;6 -->
+<g id="edge6" class="edge"><title>2&#45;&gt;6</title>
+<path fill="none" stroke="black" d="M275.154,-341.907C282.677,-332.832 290.729,-323.121 298.482,-313.769"/>
+<polygon fill="black" stroke="black" points="301.218,-315.953 304.906,-306.021 295.829,-311.485 301.218,-315.953"/>
+</g>
+<!-- 4 -->
+<g id="node5" class="node"><title>4</title>
+<path fill="#399de5" stroke="black" d="M85,-179.5C85,-179.5 12,-179.5 12,-179.5 6,-179.5 0,-173.5 0,-167.5 0,-167.5 0,-123.5 0,-123.5 0,-117.5 6,-111.5 12,-111.5 12,-111.5 85,-111.5 85,-111.5 91,-111.5 97,-117.5 97,-123.5 97,-123.5 97,-167.5 97,-167.5 97,-173.5 91,-179.5 85,-179.5"/>
+<text text-anchor="start" x="19.5" y="-164.3" font-family="Helvetica,sans-Serif" font-size="14.00">gini = 0.0</text>
+<text text-anchor="start" x="9" y="-149.3" font-family="Helvetica,sans-Serif" font-size="14.00">samples = 1</text>
+<text text-anchor="start" x="8" y="-134.3" font-family="Helvetica,sans-Serif" font-size="14.00">value = [0, 1]</text>
+<text text-anchor="start" x="19.5" y="-119.3" font-family="Helvetica,sans-Serif" font-size="14.00">class = o</text>
+</g>
+<!-- 3&#45;&gt;4 -->
+<g id="edge4" class="edge"><title>3&#45;&gt;4</title>
+<path fill="none" stroke="black" d="M111.193,-222.907C101.777,-211.432 91.5262,-198.938 82.0933,-187.442"/>
+<polygon fill="black" stroke="black" points="84.7629,-185.178 75.7139,-179.667 79.3513,-189.618 84.7629,-185.178"/>
+</g>
+<!-- 5 -->
+<g id="node6" class="node"><title>5</title>
+<path fill="#e58139" stroke="black" d="M200,-179.5C200,-179.5 127,-179.5 127,-179.5 121,-179.5 115,-173.5 115,-167.5 115,-167.5 115,-123.5 115,-123.5 115,-117.5 121,-111.5 127,-111.5 127,-111.5 200,-111.5 200,-111.5 206,-111.5 212,-117.5 212,-123.5 212,-123.5 212,-167.5 212,-167.5 212,-173.5 206,-179.5 200,-179.5"/>
+<text text-anchor="start" x="134.5" y="-164.3" font-family="Helvetica,sans-Serif" font-size="14.00">gini = 0.0</text>
+<text text-anchor="start" x="124" y="-149.3" font-family="Helvetica,sans-Serif" font-size="14.00">samples = 1</text>
+<text text-anchor="start" x="123" y="-134.3" font-family="Helvetica,sans-Serif" font-size="14.00">value = [1, 0]</text>
+<text text-anchor="start" x="133.5" y="-119.3" font-family="Helvetica,sans-Serif" font-size="14.00">class = C</text>
+</g>
+<!-- 3&#45;&gt;5 -->
+<g id="edge5" class="edge"><title>3&#45;&gt;5</title>
+<path fill="none" stroke="black" d="M151.092,-222.907C152.83,-212.204 154.712,-200.615 156.472,-189.776"/>
+<polygon fill="black" stroke="black" points="159.966,-190.099 158.114,-179.667 153.056,-188.977 159.966,-190.099"/>
+</g>
+<!-- 7 -->
+<g id="node8" class="node"><title>7</title>
+<path fill="#399de5" stroke="black" d="M360,-179.5C360,-179.5 279,-179.5 279,-179.5 273,-179.5 267,-173.5 267,-167.5 267,-167.5 267,-123.5 267,-123.5 267,-117.5 273,-111.5 279,-111.5 279,-111.5 360,-111.5 360,-111.5 366,-111.5 372,-117.5 372,-123.5 372,-123.5 372,-167.5 372,-167.5 372,-173.5 366,-179.5 360,-179.5"/>
+<text text-anchor="start" x="290.5" y="-164.3" font-family="Helvetica,sans-Serif" font-size="14.00">gini = 0.0</text>
+<text text-anchor="start" x="276" y="-149.3" font-family="Helvetica,sans-Serif" font-size="14.00">samples = 47</text>
+<text text-anchor="start" x="275" y="-134.3" font-family="Helvetica,sans-Serif" font-size="14.00">value = [0, 47]</text>
+<text text-anchor="start" x="290.5" y="-119.3" font-family="Helvetica,sans-Serif" font-size="14.00">class = o</text>
+</g>
+<!-- 6&#45;&gt;7 -->
+<g id="edge7" class="edge"><title>6&#45;&gt;7</title>
+<path fill="none" stroke="black" d="M331.908,-222.907C330.17,-212.204 328.288,-200.615 326.528,-189.776"/>
+<polygon fill="black" stroke="black" points="329.944,-188.977 324.886,-179.667 323.034,-190.099 329.944,-188.977"/>
+</g>
+<!-- 8 -->
+<g id="node9" class="node"><title>8</title>
+<path fill="#ffffff" stroke="black" d="M538.5,-187C538.5,-187 402.5,-187 402.5,-187 396.5,-187 390.5,-181 390.5,-175 390.5,-175 390.5,-116 390.5,-116 390.5,-110 396.5,-104 402.5,-104 402.5,-104 538.5,-104 538.5,-104 544.5,-104 550.5,-110 550.5,-116 550.5,-116 550.5,-175 550.5,-175 550.5,-181 544.5,-187 538.5,-187"/>
+<text text-anchor="start" x="398.5" y="-171.8" font-family="Helvetica,sans-Serif" font-size="14.00">Credit history &#160;≤ &#45;0.133</text>
+<text text-anchor="start" x="441.5" y="-156.8" font-family="Helvetica,sans-Serif" font-size="14.00">gini = 0.5</text>
+<text text-anchor="start" x="431" y="-141.8" font-family="Helvetica,sans-Serif" font-size="14.00">samples = 2</text>
+<text text-anchor="start" x="430" y="-126.8" font-family="Helvetica,sans-Serif" font-size="14.00">value = [1, 1]</text>
+<text text-anchor="start" x="440.5" y="-111.8" font-family="Helvetica,sans-Serif" font-size="14.00">class = C</text>
+</g>
+<!-- 6&#45;&gt;8 -->
+<g id="edge8" class="edge"><title>6&#45;&gt;8</title>
+<path fill="none" stroke="black" d="M384.297,-222.907C394.842,-213.56 406.15,-203.538 416.991,-193.929"/>
+<polygon fill="black" stroke="black" points="419.622,-196.273 424.784,-187.021 414.979,-191.035 419.622,-196.273"/>
+</g>
+<!-- 9 -->
+<g id="node10" class="node"><title>9</title>
+<path fill="#e58139" stroke="black" d="M449,-68C449,-68 376,-68 376,-68 370,-68 364,-62 364,-56 364,-56 364,-12 364,-12 364,-6 370,-0 376,-0 376,-0 449,-0 449,-0 455,-0 461,-6 461,-12 461,-12 461,-56 461,-56 461,-62 455,-68 449,-68"/>
+<text text-anchor="start" x="383.5" y="-52.8" font-family="Helvetica,sans-Serif" font-size="14.00">gini = 0.0</text>
+<text text-anchor="start" x="373" y="-37.8" font-family="Helvetica,sans-Serif" font-size="14.00">samples = 1</text>
+<text text-anchor="start" x="372" y="-22.8" font-family="Helvetica,sans-Serif" font-size="14.00">value = [1, 0]</text>
+<text text-anchor="start" x="382.5" y="-7.8" font-family="Helvetica,sans-Serif" font-size="14.00">class = C</text>
+</g>
+<!-- 8&#45;&gt;9 -->
+<g id="edge9" class="edge"><title>8&#45;&gt;9</title>
+<path fill="none" stroke="black" d="M448.903,-103.726C444.313,-95.0615 439.459,-85.8962 434.842,-77.1802"/>
+<polygon fill="black" stroke="black" points="437.912,-75.4982 430.138,-68.2996 431.726,-78.7748 437.912,-75.4982"/>
+</g>
+<!-- 10 -->
+<g id="node11" class="node"><title>10</title>
+<path fill="#399de5" stroke="black" d="M564,-68C564,-68 491,-68 491,-68 485,-68 479,-62 479,-56 479,-56 479,-12 479,-12 479,-6 485,-0 491,-0 491,-0 564,-0 564,-0 570,-0 576,-6 576,-12 576,-12 576,-56 576,-56 576,-62 570,-68 564,-68"/>
+<text text-anchor="start" x="498.5" y="-52.8" font-family="Helvetica,sans-Serif" font-size="14.00">gini = 0.0</text>
+<text text-anchor="start" x="488" y="-37.8" font-family="Helvetica,sans-Serif" font-size="14.00">samples = 1</text>
+<text text-anchor="start" x="487" y="-22.8" font-family="Helvetica,sans-Serif" font-size="14.00">value = [0, 1]</text>
+<text text-anchor="start" x="498.5" y="-7.8" font-family="Helvetica,sans-Serif" font-size="14.00">class = o</text>
+</g>
+<!-- 8&#45;&gt;10 -->
+<g id="edge10" class="edge"><title>8&#45;&gt;10</title>
+<path fill="none" stroke="black" d="M491.725,-103.726C496.235,-95.0615 501.006,-85.8962 505.543,-77.1802"/>
+<polygon fill="black" stroke="black" points="508.653,-78.7859 510.166,-68.2996 502.444,-75.5537 508.653,-78.7859"/>
+</g>
+</g>
+</svg>
 
-<span class="ansi-green-intense-fg ansi-bold">~\anaconda3\lib\site-packages\sklearn\tree\_export.py</span> in <span class="ansi-cyan-fg">export_graphviz</span><span class="ansi-blue-intense-fg ansi-bold">(decision_tree, out_file, max_depth, feature_names, class_names, label, filled, leaves_parallel, impurity, node_ids, proportion, rotate, rounded, special_characters, precision)</span>
-<span class="ansi-green-fg">    786</span>             rounded<span class="ansi-yellow-intense-fg ansi-bold">=</span>rounded<span class="ansi-yellow-intense-fg ansi-bold">,</span> special_characters<span class="ansi-yellow-intense-fg ansi-bold">=</span>special_characters<span class="ansi-yellow-intense-fg ansi-bold">,</span>
-<span class="ansi-green-fg">    787</span>             precision=precision)
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 788</span><span class="ansi-yellow-intense-fg ansi-bold">         </span>exporter<span class="ansi-yellow-intense-fg ansi-bold">.</span>export<span class="ansi-yellow-intense-fg ansi-bold">(</span>decision_tree<span class="ansi-yellow-intense-fg ansi-bold">)</span>
-<span class="ansi-green-fg">    789</span> 
-<span class="ansi-green-fg">    790</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> return_string<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-
-<span class="ansi-green-intense-fg ansi-bold">~\anaconda3\lib\site-packages\sklearn\tree\_export.py</span> in <span class="ansi-cyan-fg">export</span><span class="ansi-blue-intense-fg ansi-bold">(self, decision_tree)</span>
-<span class="ansi-green-fg">    412</span>         <span class="ansi-green-intense-fg ansi-bold">if</span> self<span class="ansi-yellow-intense-fg ansi-bold">.</span>feature_names <span class="ansi-green-intense-fg ansi-bold">is</span> <span class="ansi-green-intense-fg ansi-bold">not</span> <span class="ansi-green-intense-fg ansi-bold">None</span><span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-fg">    413</span>             <span class="ansi-green-intense-fg ansi-bold">if</span> len<span class="ansi-yellow-intense-fg ansi-bold">(</span>self<span class="ansi-yellow-intense-fg ansi-bold">.</span>feature_names<span class="ansi-yellow-intense-fg ansi-bold">)</span> <span class="ansi-yellow-intense-fg ansi-bold">!=</span> decision_tree<span class="ansi-yellow-intense-fg ansi-bold">.</span>n_features_<span class="ansi-yellow-intense-fg ansi-bold">:</span>
-<span class="ansi-green-intense-fg ansi-bold">--&gt; 414</span><span class="ansi-yellow-intense-fg ansi-bold">                 raise ValueError(&#34;Length of feature_names, %d &#34;
-</span><span class="ansi-green-fg">    415</span>                                  <span class="ansi-blue-intense-fg ansi-bold">&#34;does not match number of features, %d&#34;</span>
-<span class="ansi-green-fg">    416</span>                                  % (len(self.feature_names),
-
-<span class="ansi-red-intense-fg ansi-bold">ValueError</span>: Length of feature_names, 7 does not match number of features, 20</pre>
 </div>
+
 </div>
 
 </div>
